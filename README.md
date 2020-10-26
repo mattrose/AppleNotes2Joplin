@@ -1,8 +1,6 @@
 # AppleNotes2Joplin
 
-I made this AppleScript because nothing else worked well enough, including [this](http://falcon.star-lord.me/exporter/).
-
-I hope it's useful to help people leave the grips of the Apple ecosystem like I am. I'm happy to maintain this for the community for that reason alone. Long live Linux.
+I made this AppleScript because nothing else worked well enough, including [this](http://falcon.star-lord.me/exporter/). I hope it's useful to help people leave the grips of the Apple ecosystem like I am. I'm happy to maintain this script for the community just for that reason.
 
 This has some very hacky code, but it does the job. It could be way cleaner, more efficient and have better UX if I really wanted to spend the time, but I saw no need to make the code unnecessarily elegant because I'm not a pro developer so it takes time for me to learn new code to get something done. I welcome PRs to clean this up, improve it, or make it more complete with HTML cleanup, conversion to Markdown, or copying over Apple's rich text formatting to simple in-line HTML ready for [Joplin](https://github.com/laurent22/joplin).
 
