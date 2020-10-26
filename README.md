@@ -6,7 +6,7 @@ I hope it's useful to help people leave the grips of the Apple ecosystem like I 
 
 This has some very hacky code, but it does the job. It could be way cleaner, more efficient and have better UX if I really wanted to spend the time, but I saw no need to make the code unnecessarily elegant because I'm not a pro developer so it takes time for me to learn new code to get something done. I welcome PRs to clean this up, improve it, or make it more complete with HTML cleanup, conversion to Markdown, or copying over Apple's rich text formatting to simple in-line HTML ready for [Joplin](https://github.com/laurent22/joplin).
 
-#### **This is a one-click AppleScript to export all your macOS Apple Notes directly into Joplin export format, preserving:**
+### **This is a one-click AppleScript to export all your macOS Apple Notes directly into Joplin export format, preserving:**
 
 - The title/heading/body of every note.
 - Note creation and last modification timestamps. (Integrated into native Joplin note metadata so they are as if you created them in Joplin directly.)
@@ -14,7 +14,7 @@ This has some very hacky code, but it does the job. It could be way cleaner, mor
 - Most rich text formatting, within reason. (Including: rich text HTML links, bold/italics, bulleted lists up to 10 indent levels, etc. Tables are problematic. Copy a rich text Apple table into Typora, save that as MD then copy that markdown code into a Joplin note).
 - Unicode characters above U+0100.
 
-#### **Things not exported by this script:**
+### **Things not exported by this script:**
 
 - Embedded images. (Solution: In Notes.app > View > Show Attachments Browser, you can locate notes with images, drag them out of a note, then drag them into a Joplin note.)
 
@@ -28,11 +28,11 @@ This has some very hacky code, but it does the job. It could be way cleaner, mor
 
 - Possibly other obscure formatting you might use in your Apple Notes. (E.g. subheading, heading, checklist, strike-through, text alignment, non-list indentation. Again, please add with a PR if you needed that and have some code to add.)
 
-#### **Other imperfections:**
+### **Other imperfections:**
 
 - Very occasionally, an Apple note can leave behind an incomplete HTML hyperlink tag for some reason (either just above or below the same link that is in tact). It converts to a half complete markdown link. Very rare, but I noticed it.
 
-#### **Read this before you run the script:**
+### **Read this before you run the script:**
 
 - All you need is macOS. (Tested on Catalina.) Nothing else. Not even Homebrew.
 - To be safe, first backup your Apple notes (e.g. Time Machine or iCloud notes via an iPhone backup on the Mac). Low likelihood of risk  as the script never deletes Apple notes or does paste actions inside Notes.app - it's just select-all and copy.
@@ -44,7 +44,7 @@ This has some very hacky code, but it does the job. It could be way cleaner, mor
 - To avoid a `Notes got an error: Can’t get note * of folder "*" of account "*". Invalid index` error that I noticed - a UX bug in Apple Notes - first do this: Set Notes.app to list the entirety of your notes (e.g. open `All iCloud` folder), select then top note, and hold down the arrow key to zoom through all notes. It will fix any 'phantom' leftover empty notes and delete them as it should have. Watch the note count to see if it reduced any of those half-dead notes.
 - Do not turn the screen off during the script process. It needs screen on to do the macro stuff. You can keep the screen alive using [Amphetamine](https://roaringapps.com/app/amphetamine).
 
-#### **How to use:**
+### **How to use:**
 
 - Download and extract `AppleNotes2Joplin.applescript` via the ZIP file [here](https://github.com/mindfulsource/AppleNotes2Joplin/archive/main.zip). (Do NOT copy the code from the raw contents on github and put it into `Script Editor.app`. Its code is somehow mangled and it won't work.) Press 'Save' in Script Editor to make the code more readable.
 - Execute the script. Process is self-explanatory. It will slowly sift through your notes like a macro. Don't touch the computer while it does this. To stop it, jump in at any time, switch to Script Editor, and press the "Stop" button.
@@ -52,7 +52,7 @@ This has some very hacky code, but it does the job. It could be way cleaner, mor
 - You can now import all your notes in one single action via Joplin's File > Import > "RAW - Joplin Export Directory". Select the single export folder you chose during the AppleScript and all your folders with notes will import into Joplin, not not folder nesting. Drag folders into other ones to emulate your nesting.
 - Inspect your imported notes in Joplin. See if it exported all notes by comparing numbers of notes per folder. Manually fix and drag across anything incomplete such as embedded media. Some rich text or other elements can carry over nicely if you manually paste in either Joplin's code edit mode, WYSIWYG edit mode, or best, external editor linked from Joplin such as [Mark Text](https://github.com/marktext/marktext).
 
-#### **Useful things I noted:**
+### **Useful things I noted:**
 
 - This script exports your pinned Apple notes just fine. But Joplin doesn't (at least yet) have a pinned notes feature. You'll have to find a different way to make them prominent in Joplin.
 - A lot of HTML code appears to render in Joplin's WYSIWYG editor. You can add new formatting that you couldn't do before in Apple Notes, like in-line text background colour. This is an upgrade!
@@ -60,7 +60,7 @@ This has some very hacky code, but it does the job. It could be way cleaner, mor
 - If you set up Joplin's encryption in its settings before importing your Apple notes, any cloud that syncs with Joplin will not see the plaintext of your notes during the import process. I checked it.
 - Don't bother requesting an export of your Apple Notes data from https://privacy.apple.com. They send you only plain text versions after days of waiting for them to process it. Leaving the Apple ecosystem? We're on our own. Let's help each other with our own code!
 
-#### **Development notes:**
+### **Development notes:**
 
 - I found HTML-to-Markdown converters like `pandoc` to be quite incomplete and inaccurate (and `pandoc` requires Homebrew to be installed). So I just put in mostly native AppleScript text substitutions to cover most of what I used in my Apple notes. Ugly code, but reliable result.
 
