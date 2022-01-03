@@ -89,7 +89,7 @@ type_: 2"
 		
 		delay 0.5 -- A little delay to help avoid hiccups
 		
-		do shell script "osascript -e 'the clipboard as Çclass RTF È' | perl -ne 'print chr foreach unpack(\"C*\",pack(\"H*\",substr($_,11,-3)))' | textutil -stdin -stdout -convert html -format rtf | pbcopy"
+		do shell script "osascript -e 'the clipboard as Ã‡class RTF Ãˆ' | perl -ne 'print chr foreach unpack(\"C*\",pack(\"H*\",substr($_,11,-3)))' | textutil -stdin -stdout -convert html -format rtf | pbcopy"
 		
 		-- Raw HTML tool: Uncomment the section below to grab the original raw HTML of the current Apple note body. May help to identify what basic HTML formatting code would work for the note in Joplin, or potentially making this script better if someone wants to help with that, see README.
 		
@@ -357,7 +357,7 @@ type_: 1"
 		set myText2 to replace_chars(myText2, return & "**" & return, return & "" & return) of me as text -- This cleans up empty lines of italics text in an Apple note. If you specifically use lines in your text only comprising "**", delete this line.
 		set myText2 to replace_chars(myText2, return & "**" & return, return & "" & return) of me as text -- Second pass of the above needed  for some instances
 		
-		-- Make a duplication of the first line of note (whether it had a title or not) with paragraph spacing to make the note's first line od body correctly be such in Joplin. If you use specific titles in all your Apple notes, it will look cleaner in Joplin if you delete this bit.
+		-- Make a duplication of the first line of note (whether it had a title or not) with paragraph spacing to make the note's first line of body correctly be such in Joplin. If you use specific titles in all your Apple notes, it will look cleaner in Joplin if you delete this bit.
 		
 		set myText2 to item 1 of paragraphs of myText2 & "
 
